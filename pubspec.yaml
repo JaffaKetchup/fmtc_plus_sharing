@@ -28,8 +28,8 @@ dependencies:
     sdk: flutter
   flutter_map_tile_caching:
     path: C:/Users/lukas/Documents/GitHub/flutter_map_tile_caching
-  isar: ^3.0.5
-  isar_flutter_libs: ^3.0.5
+  isar: ^3.0.5-dev.0
+  isar_flutter_libs: ^3.0.6-dev.0
   meta: ^1.7.0
   path: ^1.8.2
   share_plus: ^6.0.1
