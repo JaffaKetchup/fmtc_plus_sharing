@@ -78,7 +78,7 @@ extension FMTCExportSharingModule on StoreExport {
   /// See [withGUI] for a method that provides logic to show appropriate platform
   /// windows/sheets for export.
   Future<void> manual(File outputFile) async {
-    await outputFile.delete();
+    if (await outputFile.exists()) await outputFile.delete();
     return FMTCRegistry
         .instance.storeDatabases[DatabaseTools.hash(storeDirectory.storeName)]!
         .copyToFile(outputFile.absolute.path);
