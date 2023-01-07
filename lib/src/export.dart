@@ -30,9 +30,9 @@ extension FMTCExportSharingModule on StoreExport {
   /// it is necessary to pass it unless [forceFilePicker] is `true`. Will cause
   /// an unhandled null error if not passed when necessary.
   ///
-  /// Exported files are named in the format:
-  /// `export_<storeName>.<fileExtension>`. The 'export' prefix will be removed
-  /// automatically if present during importing.
+  /// If the file already exists, it will be deleted without warning. The default
+  /// filename includes an 'export_' prefix, which will be removed automatically
+  /// if present during importing.
   ///
   /// Returns `true` when successful, otherwise `false` when unsuccessful or
   /// unknown.
@@ -70,11 +70,17 @@ extension FMTCExportSharingModule on StoreExport {
     }
   }
 
-  /// Export the store to a specified [outputFile]
+  /// Export the store to a specified non-existing [outputFile]
+  ///
+  /// The [outputFile] should not exist. If it does, it will be deleted without
+  /// warning.
   ///
   /// See [withGUI] for a method that provides logic to show appropriate platform
   /// windows/sheets for export.
-  Future<void> manual(File outputFile) => FMTCRegistry
-      .instance.storeDatabases[DatabaseTools.hash(storeDirectory.storeName)]!
-      .copyToFile(outputFile.absolute.path);
+  Future<void> manual(File outputFile) async {
+    await outputFile.delete();
+    return FMTCRegistry
+        .instance.storeDatabases[DatabaseTools.hash(storeDirectory.storeName)]!
+        .copyToFile(outputFile.absolute.path);
+  }
 }
