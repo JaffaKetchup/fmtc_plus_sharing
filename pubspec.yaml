@@ -20,10 +20,10 @@ platforms:
 
 environment:
   sdk: ">=2.17.0 <3.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.7.0"
 
 dependencies:
-  cross_file: ^0.3.3+2
+  cross_file: ^0.3.3+4
   file_picker: ^5.0.2
   flutter:
     sdk: flutter
