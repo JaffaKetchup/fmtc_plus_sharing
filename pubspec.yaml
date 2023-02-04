@@ -5,7 +5,6 @@ homepage: https://github.com/JaffaKetchup/flutter_map_tile_caching
 repository: https://github.com/JaffaKetchup/fmtc_plus_sharing
 issue_tracker: https://github.com/JaffaKetchup/flutter_map_tile_caching/issues
 documentation: https://fmtc.jaffaketchup.dev
-publish_to: none
 
 funding:
   - https://github.com/sponsors/JaffaKetchup
