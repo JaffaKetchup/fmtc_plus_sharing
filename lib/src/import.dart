@@ -96,8 +96,7 @@ extension FMTCImportSharingModule on RootImport {
               }
 
               // Create the temporary directory
-              final tmpDir =
-                  FMTC.instance.rootDirectory.directory >> 'temporary';
+              final tmpDir = FMTC.instance.rootDirectory.directory >> 'import';
               await tmpDir.create();
 
               // Construct temporary structures to read the Isar database at an
@@ -113,10 +112,7 @@ extension FMTCImportSharingModule on RootImport {
                 tmpDb = await Isar.open(
                   [DbStoreDescriptorSchema, DbTileSchema, DbMetadataSchema],
                   name: tmpPath.replaceAll('.isar', ''),
-                  directory:
-                      (FMTC.instance.rootDirectory.directory >> 'temporary')
-                          .absolute
-                          .path,
+                  directory: tmpDir.absolute.path,
                   maxSizeMiB: FMTC.instance.settings.databaseMaxSize,
                   compactOnLaunch:
                       FMTC.instance.settings.databaseCompactCondition,
