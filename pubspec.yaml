@@ -1,6 +1,6 @@
 name: fmtc_plus_sharing
 description: Module for 'flutter_map_tile_caching' providing import/export functionality.
-version: 8.0.0-dev.2
+version: 8.0.0
 homepage: https://github.com/JaffaKetchup/flutter_map_tile_caching
 repository: https://github.com/JaffaKetchup/fmtc_plus_sharing
 issue_tracker: https://github.com/JaffaKetchup/flutter_map_tile_caching/issues
@@ -25,7 +25,7 @@ dependencies:
   file_picker: ^5.0.2
   flutter:
     sdk: flutter
-  flutter_map_tile_caching: ^8.0.0-dev.6
+  flutter_map_tile_caching: ^8.0.0
   isar: ^3.1.0+1
   isar_flutter_libs: ^3.1.0+1
   meta: ^1.7.0
